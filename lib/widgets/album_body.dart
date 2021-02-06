@@ -2,6 +2,7 @@ import 'package:albums_app/album_display/bloc/album_bloc.dart';
 import 'package:albums_app/album_display/bloc/album_event.dart';
 import 'package:albums_app/album_display/bloc/album_state.dart';
 import 'package:albums_app/album_display/model/album_model.dart';
+import 'package:albums_app/constants/colors.dart';
 import 'package:albums_app/widgets/album_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,8 +17,8 @@ class AlbumBody extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xffFBF4F2),
-            Color(0xffE1F0FD),
+            AppColor.lightPink,
+            AppColor.lightBlue,
           ],
         ),
       ),
