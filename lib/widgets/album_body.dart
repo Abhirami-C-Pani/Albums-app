@@ -38,7 +38,7 @@ class AlbumBody extends StatelessWidget {
               Scaffold.of(context).showSnackBar(SnackBar(
                 backgroundColor: Colors.purple.shade500,
                 content: Text(
-                  'End of album list.',
+                  'End of album list!',
                   textScaleFactor: 1.0,
                 ),
               ));
