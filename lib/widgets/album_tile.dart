@@ -21,7 +21,7 @@ class AlbumTile extends StatelessWidget {
             ),
           ],
         ),
-        height: 81,
+        height: 83,
         child: ListTile(
           leading: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,6 +40,7 @@ class AlbumTile extends StatelessWidget {
                 child: Center(
                   child: Text(
                     album.id.toString(),
+                    textScaleFactor: 1.0,
                   ),
                 ),
               ),
@@ -53,9 +54,11 @@ class AlbumTile extends StatelessWidget {
                 Flexible(
                   child: Text(
                     album.title,
+                    textScaleFactor: 1.0,
                     overflow: TextOverflow.fade,
                     softWrap: true,
                     style: TextStyle(
+                      fontSize: 15,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -73,6 +76,7 @@ class AlbumTile extends StatelessWidget {
             child: Center(
               child: Text(
                 'user id: ' + album.userId.toString(),
+                textScaleFactor: 1.0,
                 style: TextStyle(
                   color: Colors.blueGrey,
                 ),

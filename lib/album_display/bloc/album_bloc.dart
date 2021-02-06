@@ -1,10 +1,10 @@
 
 import 'package:albums_app/album_display/model/album_model.dart';
 import 'package:albums_app/album_display/repo/albums_repository.dart';
-import 'package:albums_app/bloc/album_event.dart';
-import 'package:albums_app/bloc/album_state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'album_event.dart';
+import 'album_state.dart';
 
 class AlbumBloc extends Bloc<AlbumEvent, AlbumState> {
   final AlbumRepository albumRepository;

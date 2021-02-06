@@ -1,7 +1,7 @@
+import 'package:albums_app/album_display/bloc/album_bloc.dart';
+import 'package:albums_app/album_display/bloc/album_event.dart';
+import 'package:albums_app/album_display/bloc/album_state.dart';
 import 'package:albums_app/album_display/model/album_model.dart';
-import 'package:albums_app/bloc/album_bloc.dart';
-import 'package:albums_app/bloc/album_event.dart';
-import 'package:albums_app/bloc/album_state.dart';
 import 'package:albums_app/widgets/album_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,12 +14,6 @@ class AlbumBody extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        //** blue */
-        // color: Color(0xffE1F0FD),),
-        //** neutral */
-        // color: Color(0xffEFF4F7),),
-        //** pink */
-        // color: Color(0xffFBF4F2)
         gradient: LinearGradient(
           colors: [
             Color(0xffFBF4F2),
@@ -33,18 +27,27 @@ class AlbumBody extends StatelessWidget {
             if (albumState is AlbumLoadingState) {
               Scaffold.of(context).showSnackBar(SnackBar(
                 backgroundColor: Colors.green,
-                content: Text(albumState.message),
+                content: Text(
+                  albumState.message,
+                  textScaleFactor: 1.0,
+                ),
               ));
             } else if (albumState is AlbumSuccessState &&
                 albumState.albums.isEmpty) {
               Scaffold.of(context).showSnackBar(SnackBar(
                 backgroundColor: Colors.purple.shade500,
-                content: Text('End of album list.'),
+                content: Text(
+                  'End of album list.',
+                  textScaleFactor: 1.0,
+                ),
               ));
             } else if (albumState is AlbumErrorState) {
               Scaffold.of(context).showSnackBar(SnackBar(
                 backgroundColor: Colors.red,
-                content: Text(albumState.error),
+                content: Text(
+                  albumState.error,
+                  textScaleFactor: 1.0,
+                ),
               ));
               context.read<AlbumBloc>().isFetching = false;
             }
@@ -75,6 +78,7 @@ class AlbumBody extends StatelessWidget {
                   const SizedBox(height: 15),
                   Text(
                     albumState.error,
+                    textScaleFactor: 1.0,
                     textAlign: TextAlign.center,
                   ),
                 ],
